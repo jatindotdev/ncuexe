@@ -6,6 +6,7 @@ import { program } from "commander";
 import chalk from "chalk";
 import semverGt from "semver/functions/gt";
 import "@total-typescript/ts-reset";
+import packageJson from "./package.json" assert { type: "json" };
 
 type PackageJson = {
   dependencies?: Record<string, string>;
@@ -183,7 +184,7 @@ program
   )
   .option("--show-all", "Show all dependencies")
   .name("ncu")
-  .version("0.0.1")
+  .version(packageJson.version)
   .on("--help", () => {
     console.log("");
     console.log("Examples:");

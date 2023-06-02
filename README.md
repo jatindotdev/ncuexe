@@ -1,40 +1,40 @@
-# ncu - npm check updates
+# ncuexe - npm check updates
 
 ## Usage
 
 ```bash
 # Installation
-npm install -g ncu
+npm install -g ncuexeexe
 
 # OR
-yarn global add ncu
+yarn global add ncuexeexe
 
 # OR
 
-npx ncu
+npx ncuexeexe
 ```
 
 ```bash
 # Upgrade outdated dependencies
-ncu -u
+ncuexe -u
 ```
 
 ```bash
 # Upgrade dependencies marked "latest" to version number
-ncu -l
+ncuexe -l
 ```
 
 ```bash
 # Show all dependencies
-ncu --show-all
+ncuexe --show-all
 ```
 
 ## Options
 
 ```bash
-$ ncu --help
+$ ncuexe --help
 
-  Usage: ncu [options]
+  Usage: ncuexe [options]
 
   Options:
     -u, --upgrade  Upgrade outdated dependencies
@@ -44,6 +44,6 @@ $ ncu --help
     -h, --help     display help for command
 
   Examples:
-    $ ncu -u
-    $ ncu --up
+    $ ncuexe -u
+    $ ncuexe --up
 ```

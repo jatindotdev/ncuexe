@@ -1,15 +1,16 @@
 {
   "name": "ncuexe",
-  "module": "ncu.ts",
+  "module": "ncuexe.ts",
   "type": "module",
-  "version": "0.0.1",
-  "bin": "bin/ncu.js",
+  "version": "0.0.1-alpha.1",
+  "bin": "bin/ncuexe.js",
   "devDependencies": {
     "@total-typescript/ts-reset": "^0.4.2",
     "@types/semver": "^7.5.0",
     "bun-types": "^0.6.6",
     "chalk": "^5.2.0",
     "commander": "^10.0.1",
+    "esbuild": "^0.17.19",
     "semver": "^7.5.1"
   },
   "peerDependencies": {
