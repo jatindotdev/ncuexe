@@ -52,14 +52,16 @@ async function checkForUpdates(args: Args): Promise<void> {
     if (args.latest || args.showAll) {
       return true;
     }
-    return dependencies[name] !== "latest";
+    return dependencies[name] !== "latest" || dependencies[name] !== "canary";
   });
 
   const devDependenciesToCheck = Object.keys(devDependencies).filter((name) => {
     if (args.latest || args.showAll) {
       return true;
     }
-    return devDependencies[name] !== "latest";
+    return (
+      devDependencies[name] !== "latest" || dependencies[name] !== "canary"
+    );
   });
 
   const updates = {
@@ -69,7 +71,7 @@ async function checkForUpdates(args: Args): Promise<void> {
         let currentVersion = dependencies[name];
         if (!Number.isInteger(Number.parseInt(currentVersion[0], 10))) {
           currentVersion =
-            currentVersion === "latest"
+            currentVersion === "latest" || dependencies[name] !== "canary"
               ? latestVersion
               : currentVersion.slice(1);
         }
@@ -92,7 +94,7 @@ async function checkForUpdates(args: Args): Promise<void> {
         let currentVersion = devDependencies[name];
         if (!Number.isInteger(Number.parseInt(currentVersion[0], 10))) {
           currentVersion =
-            currentVersion === "latest"
+            currentVersion === "latest" || dependencies[name] !== "canary"
               ? latestVersion
               : currentVersion.slice(1);
         }
